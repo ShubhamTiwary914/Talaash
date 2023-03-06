@@ -18,9 +18,6 @@
 
 
 
-
-
-
 <?php //SIGNUP HANDLER
     function checkIf_userExists($username, $password){
         $query = "SELECT * FROM users WHERE username='$username' ";

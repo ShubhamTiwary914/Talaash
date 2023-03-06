@@ -60,13 +60,19 @@ function loadSignUp_page(){
 
 function alert_takenField(isTaken){
     if(isTaken.contact){
-        console.log("email or phone is taken")
+        $('#contactTaken_alerter').text('The Email or Phone Number has already been Taken!')
+        setTimeout(disable_alerterText, 2000)
     }
     if(isTaken.username){
-        console.log("username is taken")
+        $('#usernameTaken_alerter').text('Username has already been Taken!')
+        setTimeout(disable_alerterText, 2000)
     }
 }
 
+function disable_alerterText(){
+    $('#usernameTaken_alerter').text('');
+    $('#contactTaken_alerter').text('');
+}
 
 
 //register to database
