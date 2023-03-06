@@ -6,16 +6,65 @@
     <title> Login </title>
 
     
+    <!-- Libraries -->
     <script src="./../scripts/packages/jquery.js"></script>
     <link rel="stylesheet" href="./../styles/css/bs5/css/bootstrap.css">
     <script src="./../styles/css/bs5/js/bootstrap.bundle.js"></script>
 
 
+    <!--  Other Links -->
+    <script src="./../components/footer.js"></script>
     <script src="./../scripts/pages/register.js"></script>
+
+    <link rel="stylesheet" href="./../styles/css/footer.css">
+    <link rel="stylesheet" href="./../styles/css/register.css">
+
     
 </head>
 <body>
-    <div id="mainBody">  </div>
+    <div id="mainBody" class='container'> 
+        <div class='row'>
+
+            <div class='col-6'> 
+                <img src='./../assets/main/logoArt.jpeg' id='logoArt'>
+            </div>
+
+            <div class='col-6'>
+                <form class="form-control m-5" id='signupForm'>
+                    <div class='row m-2'>
+                        <input class='form-label col-6 p-3 w-75' placeholder="Username / Email or Phone No"/> 
+                    </div> <br />
+                    
+                    <div class='row m-2'>
+                        <input class='form-label col-6 p-3 w-75' placeholder="Password"/> 
+                    </div> <br />
+                    <br /> <br />
+
+                    <div class="form-check">
+                        <label class="form-check-label"> Remember Me </label>
+                        <input class="form-check-input" type="checkbox" value="" id="rememberMeCheck">
+                    </div>
+
+                    <br /> <br /> <br /> <br /> 
+                    
+                    <div class="row" id='signInLink'> <br />
+
+                        <span class='text-white col-6' id='signUpLabel'>  Create an Account </span>  
+                        <span class='col-2' id='signUpLink'> Signup </span>
+                    </div>
+                    <br /> <br /> 
+
+                </form>
+
+                <div class='row m-4'>
+                    <div class='col-6'>
+                        <button class='btn btn-primary float-end w-50' id='signIn_button'> Submit </button>
+                    </div>
+                </div>  <br /> <br /> 
+            </div> 
+
+        </div>
+    </div>
     <div id="footer">  </div>
 </body>
 </html>

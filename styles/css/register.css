@@ -12,19 +12,34 @@ body {
   border: 1px #ff784b;
 }
 
+#mainBody #signupForm input {
+  border-radius: 10px 10px;
+}
+
 #mainBody #signupForm label {
-  color: #0d212c;
-  font-size: x-large;
+  color: white;
+  font-size: larger;
   margin-left: 10px;
 }
 
-#mainBody #signupForm button {
-  background-color: #0d212c;
-  border: 1px #0d212c;
+#mainBody #signupForm #signUpLabel {
+  font-size: larger;
+}
+
+#mainBody #signupForm #loginLink, #mainBody #signupForm #signUpLink {
+  font-size: larger;
+}
+
+#mainBody #signupForm #loginLink:hover, #mainBody #signupForm #signUpLink:hover {
+  cursor: pointer;
 }
 
 #mainBody #signupForm #userType {
-  background-color: rebeccapurple;
   margin-left: 20px;
+}
+
+#mainBody #signUp_button, #mainBody #signIn_button {
+  background-color: #0d212c;
+  border: 1px #0d212c;
 }
 /*# sourceMappingURL=register.css.map */

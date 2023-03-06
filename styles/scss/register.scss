@@ -1,6 +1,4 @@
-
-$saffron: #ff784b;
-$navyBlue: #0d212c;
+@import 'colors';
 
 body{
     background-color: $saffron;
@@ -18,21 +16,36 @@ body{
         background-color: rgba($color: $saffron, $alpha: 0.5);
         border: 1px $saffron;
 
+        input{
+            border-radius: 10px 10px;
+        }
+
         label{
-            color: $navyBlue;
-            font-size: x-large;
+            color: white;
+            font-size: larger;
             margin-left: 10px;
         }
 
-        button{
-            background-color: $navyBlue;
-            border: 1px $navyBlue;
+        #signUpLabel{
+            font-size: larger;
+        }
+
+        #loginLink, #signUpLink{
+            font-size: larger;
+            &:hover{
+                cursor: pointer;
+            }
         }
 
         #userType{
-            background-color: rebeccapurple;
             margin-left: 20px;
         }
-
     }
+
+
+    #signUp_button, #signIn_button{
+        background-color: $navyBlue;
+        border: 1px $navyBlue;
+    }
+
 }
