@@ -22,6 +22,10 @@ body {
   margin-left: 10px;
 }
 
+#mainBody #signupForm .alerterText {
+  font-size: x-large;
+}
+
 #mainBody #signupForm #signUpLabel {
   font-size: larger;
 }
