@@ -13,7 +13,6 @@ let switchInput = false;
 
 
 $(document).ready(function(){
-   
     //Loading Component and switch
     $('#footer').html(loadFooterComponent());
     $('#switchInput').on('click', ()=>{
@@ -37,7 +36,6 @@ $(document).ready(function(){
     $('#signIn_button').on('click', function(){
         loginUser();
     })
-
 });
 
 
@@ -60,6 +58,17 @@ function loadSignUp_page(){
 }
 
 
+function alert_takenField(isTaken){
+    if(isTaken.contact){
+        console.log("email or phone is taken")
+    }
+    if(isTaken.username){
+        console.log("username is taken")
+    }
+}
+
+
+
 //register to database
 function signupUser(){
     let username = $('#input-uname').val()
@@ -68,6 +77,7 @@ function signupUser(){
     let phone_no = $('#input-phone').val();
     let isGovernmentOfficial = switchInput;
 
+    
     $.post('./../php/pages/register.php', {
         uname: username,
         pwd: password,
@@ -75,10 +85,11 @@ function signupUser(){
         phone: phone_no,
         isGovOff: isGovernmentOfficial,
         signUp: true 
-    }, (response)=>{
-        //callback after user signs up 
-        console.log(response)
+    }, (response)=>{   //callback after user signs up 
+       var isTaken = JSON.parse(response);
+       alert_takenField(isTaken);
     });
+
 }
 
 
