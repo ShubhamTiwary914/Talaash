@@ -7,12 +7,10 @@
         $date_of_creation = mysqli_real_escape_string( $_SESSION['dbConnection'], date("Y-m-d H:i:s", $date_of_creation));
         return $date_of_creation;
     }
-
-    
+ 
     function filter_stringInput($stringInput){
         return mysqli_real_escape_string( $_SESSION['dbConnection'], $stringInput);
     }
-
 ?>
 
 
@@ -79,8 +77,24 @@
 
 
 <?php  //LOGIN HANDLER
-    function login(){
+    function generate_userLoginCookie($rememberUser){
+        if($rememberUser){ //create cookie and remember user
 
+        }
+    }
+
+    //verify if the user as mentioned is registered in the database
+    function verify_userPresent($userData, $password){
+        $query = "SELECT * from users WHERE username = '$userData' OR email = '$userData' OR phone_no='$userData' ";
+        $result = mysqli_query( $_SESSION['dbConnection'], $query);
+        if( mysqli_num_rows($result) > 0 )
+            return TRUE;
+        return FALSE;
+    }
+
+    function login($userData, $password, $rememberUser){
+        $userData = filter_stringInput($userData);
+        $password = filter_stringInput($password);
     }
 ?>
 
@@ -94,5 +108,5 @@
     if(isset($_POST['signUp']))
         signUp( $_POST['uname'], $_POST['pwd'], $_POST['email'], $_POST['phone'], $_POST['isGovOff']);
     if(isset($_POST['signIn']))
-        login();
+        login( $_POST['uData'], $_POST['password'], $_POST['rememberMe']);
 ?>    

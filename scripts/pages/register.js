@@ -7,17 +7,22 @@
     Date Created: March 6 
 */
 
+
 //VARIABLES
 let switchInput = false;
+let rememberMeChecker = false;
 
 
 
 $(document).ready(function(){
-    //Loading Component and switch
+    //Loading Component and switches
     $('#footer').html(loadFooterComponent());
     $('#switchInput').on('click', ()=>{
         userType_labelSwitcher();
     });
+    $('#rememberMeCheck').on('click', ()=>{
+        rememberMeChecker = !rememberMeChecker;
+    })
 
 
     // Links
@@ -36,6 +41,9 @@ $(document).ready(function(){
     $('#signIn_button').on('click', function(){
         loginUser();
     })
+
+
+
 });
 
 
@@ -56,6 +64,7 @@ function loadLogin_page(){
 function loadSignUp_page(){
     window.location.href = "./../pages/signup.html";
 }
+
 
 
 function alert_takenField(isTaken){
@@ -101,5 +110,16 @@ function signupUser(){
 
 //login by verifying user data from database
 function loginUser(){
+    let userData = $('#input-userData').val();
+    let pwd = $('#input-password').val();
+    let checker = rememberMeChecker;
 
+    $.post('./../php/pages/register.php', {
+        uData: userData,
+        password: pwd,
+        rememberMe: checker,
+        signIn: true
+    }, (response)=>{
+        console.log(response);
+    });
 }
