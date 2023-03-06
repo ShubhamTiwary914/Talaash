@@ -22,12 +22,10 @@ function checkUser_logs(){
 }
 
 function redirectUser_toSignup(){
-    window.location.href = "./pages/login.html"
+    window.location.href = "./pages/signup.html"
 }
-
 
 
 $(document).ready(function(){
     checkUser_logs();
-
 });

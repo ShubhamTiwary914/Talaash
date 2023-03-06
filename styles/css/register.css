@@ -1,0 +1,30 @@
+body {
+  background-color: #ff784b;
+}
+
+#mainBody #logoArt {
+  width: 110%;
+  height: 90%;
+}
+
+#mainBody #signupForm {
+  background-color: rgba(255, 120, 75, 0.5);
+  border: 1px #ff784b;
+}
+
+#mainBody #signupForm label {
+  color: #0d212c;
+  font-size: x-large;
+  margin-left: 10px;
+}
+
+#mainBody #signupForm button {
+  background-color: #0d212c;
+  border: 1px #0d212c;
+}
+
+#mainBody #signupForm #userType {
+  background-color: rebeccapurple;
+  margin-left: 20px;
+}
+/*# sourceMappingURL=register.css.map */

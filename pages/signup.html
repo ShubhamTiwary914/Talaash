@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Sign Up </title>
+
+    <!-- Libraries -->
+    <script src="./../scripts/packages/jquery.js"></script>
+    <link rel="stylesheet" href="./../styles/css/bs5/css/bootstrap.css">
+    <script src="./../styles/css/bs5/js/bootstrap.bundle.js"></script>
+
+    <!--  Other Links -->
+    <link rel="stylesheet" href="./../styles/css/register.css">
+    <script src="./../scripts/pages/register.js"></script>
+    
+    
+</head>
+<body>
+
+    <div id="mainBody" class="container"> 
+        <div class='row'>
+
+            <div class='col-6'> 
+                <img src='./../assets/main/logoArt.jpeg' id='logoArt'>
+            </div>
+
+            <div class='col-6'>
+                <form class="form-control m-5" id='signupForm'>
+                    <div class='row m-2'>
+                        <label for="username" class='form-label'> Username </label> <br />
+                        <input class='form-label col-6 p-3 w-75'/> 
+                    </div>                  
+                    
+                    <div class='row m-2'>
+                        <label for="email" class='form-label'> Email Address </label> <br />
+                        <input class='form-label col-6 p-3 w-75'/> 
+                    </div>
+        
+                    <div class='row m-2'>
+                        <label for="email" class='form-label'> Password </label> <br />
+                        <input class='form-label col-6 p-3 w-75'/> 
+                    </div> <br />
+
+                    <div class='row''>
+                        <div class="form-check form-switch" id='userType'>
+                            <label class="form-check-label"> Category:  </label>
+                            <label class="form-check-label" id='switchLabel'> Civilian </label>
+                            <input type="checkbox" class="form-check-input" id='switchInput'/>
+                        </div>
+                    </div>
+                    
+        
+                    <div class='row m-4'>
+                        <div class='col-6'>
+                            <button class='btn btn-primary float-end w-50'> Submit </button>
+                        </div>
+                    </div>
+                </form>
+            </div> 
+
+        </div>
+    </div>
+    
+    <div id="footer">  </div>
+</body>
+</html>

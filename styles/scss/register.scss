@@ -1,0 +1,38 @@
+
+$saffron: #ff784b;
+$navyBlue: #0d212c;
+
+body{
+    background-color: $saffron;
+}
+
+#mainBody{
+
+    #logoArt{
+        width: 110%;
+        height: 90%;
+    }
+
+
+    #signupForm{
+        background-color: rgba($color: $saffron, $alpha: 0.5);
+        border: 1px $saffron;
+
+        label{
+            color: $navyBlue;
+            font-size: x-large;
+            margin-left: 10px;
+        }
+
+        button{
+            background-color: $navyBlue;
+            border: 1px $navyBlue;
+        }
+
+        #userType{
+            background-color: rebeccapurple;
+            margin-left: 20px;
+        }
+
+    }
+}
