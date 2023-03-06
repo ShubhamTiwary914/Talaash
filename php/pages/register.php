@@ -83,18 +83,25 @@
         }
     }
 
-    //verify if the user as mentioned is registered in the database
-    function verify_userPresent($userData, $password){
-        $query = "SELECT * from users WHERE username = '$userData' OR email = '$userData' OR phone_no='$userData' ";
-        $result = mysqli_query( $_SESSION['dbConnection'], $query);
-        if( mysqli_num_rows($result) > 0 )
-            return TRUE;
-        return FALSE;
-    }
-
     function login($userData, $password, $rememberUser){
         $userData = filter_stringInput($userData);
         $password = filter_stringInput($password);
+
+        $query = "SELECT * from users WHERE username = '$userData' OR email = '$userData' OR phone_no='$userData' ";
+        $result = mysqli_query( $_SESSION['dbConnection'], $query);
+        if( mysqli_num_rows($result) > 0 ){ //User does exist, check that user's password
+            $userRow = mysqli_fetch_assoc($result);
+            $verifiedPassword = password_verify($password, $userRow['pwd']);
+            if($verifiedPassword){   //Password matches with user Data, login user
+                $_SESSION['userIsLogged'] = TRUE;
+                generate_userLoginCookie($rememberUser);
+                echo '{ "correctPwd": true,  "correctUserData": true}';
+            }else{   //Incorrect password
+                echo '{ "correctPwd": false,  "correctUserData": true}';
+            }
+        }else{    //User does not exist
+            echo '{ "correctPwd": true,  "correctUserData": false}';
+        }
     }
 ?>
 

@@ -15,6 +15,7 @@ function checkUser_logs(){
         checkUserLogs: true
     }, (userLogs)=>{
         userIslogged = booleanParser(userLogs)
+        console.log(userLogs)
         if(!userIslogged){
             redirectUser_toSignup();
         }
