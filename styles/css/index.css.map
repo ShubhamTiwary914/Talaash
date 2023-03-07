@@ -1,8 +1,9 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAGA,AAAA,OAAO,CAAA;EACH,gBAAgB,ECJV,OAAO;EDKb,KAAK,EAAE,KAAK;CACf",
     "sources": [
-        "../scss/index.scss"
+        "../scss/index.scss",
+        "../scss/colors.scss"
     ],
     "names": [],
     "file": "index.css"

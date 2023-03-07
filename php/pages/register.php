@@ -1,6 +1,6 @@
 <?php   //FILES IMPORTS /   GLOBAL VARIABLES   /   HELPER FUNCTIONS
-
     include './../dbconn.php';
+    
 
     function get_DateCreated(){
         $date_of_creation = strtotime(date("Y-m-d H:i:s")."-10 second");
@@ -93,7 +93,6 @@
             $userRow = mysqli_fetch_assoc($result);
             $verifiedPassword = password_verify($password, $userRow['pwd']);
             if($verifiedPassword){   //Password matches with user Data, login user
-                $_SESSION['userIsLogged'] = TRUE;
                 generate_userLoginCookie($rememberUser);
                 echo '{ "correctPwd": true,  "correctUserData": true}';
             }else{   //Incorrect password
