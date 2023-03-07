@@ -19,5 +19,14 @@ function checkUser_logs(){
 
 $(document).ready(function(){
     checkUser_logs();
-    $('#header').html( loadHeaderComponent() );
+    $('#header').html(loadHeaderComponent( "./assets/main/mainLogo.png" ));
+    loadHeaderStyles('home');
+    $('#footer').html( loadFooterComponent() );
+
+
+    $('.navLink').on('click', function(){
+        let targetPage =  $(this).attr('id').split('-')[0];
+        moveTo_headerLink('./', targetPage); 
+    });
 });
+
