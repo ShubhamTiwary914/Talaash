@@ -7,25 +7,26 @@
     Date Created: March 6 
 */
 
-let userIslogged = false;
 
 
 function checkUser_logs(){
-    $.post('./php/index.php', {
-        checkUserLogs: true
-    }, (userLogs)=>{
-        userIslogged = booleanParser(userLogs)
-        if(!userIslogged){
-            redirectUser_toSignup();
-        }
-    });
-}
-
-function redirectUser_toSignup(){
-    window.location.href = "./pages/signup.html"
+    let userIsLogged = sessionStorage.getItem('userIsLogged');
+    if(userIsLogged == null)  userIsLogged = false;
+    if(!userIsLogged)   //user not logged, redirect to signup page
+        window.location.href = "./pages/signup.html"
 }
 
 
 $(document).ready(function(){
     checkUser_logs();
+    $('#header').html(loadHeaderComponent( "./assets/main/mainLogo.png" ));
+    loadHeaderStyles('home');
+    $('#footer').html( loadFooterComponent() );
+
+
+    $('.navLink').on('click', function(){
+        let targetPage =  $(this).attr('id').split('-')[0];
+        moveTo_headerLink('./', targetPage); 
+    });
 });
+

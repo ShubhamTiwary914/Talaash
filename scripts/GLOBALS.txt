@@ -1,0 +1,3 @@
+Holds list of all variables in client session for documentation
+
+1. userIsLogged (boolean):  true if user has logged in, false if not

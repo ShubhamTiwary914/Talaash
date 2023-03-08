@@ -2,6 +2,8 @@
     Handling Signup and Login Forms 
     1. Switches catergory whether uses signs up as civilian or government official
     2. Handles links changes between signup and login pages
+    3. Specifies whether user has entered a wrong field
+    4. Passes input data onto backend php file: pages/register.php
         
 
     Date Created: March 6 
@@ -66,7 +68,7 @@ function loadSignUp_page(){
 }
 
 
-
+//Alert for Errors in field
 function alert_takenField(isTaken){
     if(isTaken.contact){
         $('#contactTaken_alerter').text('The Email or Phone Number has already been Taken!')
@@ -77,11 +79,30 @@ function alert_takenField(isTaken){
         setTimeout(disable_alerterText, 2000)
     }
 }
-
 function disable_alerterText(){
     $('#usernameTaken_alerter').text('');
     $('#contactTaken_alerter').text('');
 }
+
+
+function alert_loginErrors( loginResponse){
+    if(!loginResponse.correctUserData){ //
+        $('#userData_alerter').text('Incorrect Username / Email or Contact No.')
+        setTimeout(disable_LoginalerterText, 2000)
+    }if(!loginResponse.correctPwd){
+        $('#password_alerter').text('Incorrect Password')
+        setTimeout(disable_LoginalerterText, 2000)
+    }
+}
+
+function disable_LoginalerterText(){
+    $('#userData_alerter').text('');
+    $('#password_alerter').text('');
+}
+
+
+
+
 
 
 //register to database
@@ -104,8 +125,8 @@ function signupUser(){
        var isTaken = JSON.parse(response);
        alert_takenField(isTaken);
     });
-
 }
+
 
 
 //login by verifying user data from database
@@ -120,6 +141,12 @@ function loginUser(){
         rememberMe: checker,
         signIn: true
     }, (response)=>{
-        console.log(response);
+        var loginResponse = JSON.parse(response);
+        if(loginResponse.correctUserData && loginResponse.correctPwd){ //User is verified, Redirect to Homepage
+            sessionStorage.setItem('userIsLogged', true)
+            window.location.href = './../index.html';
+        }else
+            alert_loginErrors(loginResponse)
     });
 }
+

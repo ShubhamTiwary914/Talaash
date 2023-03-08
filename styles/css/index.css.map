@@ -2,7 +2,8 @@
     "version": 3,
     "mappings": "",
     "sources": [
-        "../scss/index.scss"
+        "../scss/index.scss",
+        "../scss/colors.scss"
     ],
     "names": [],
     "file": "index.css"

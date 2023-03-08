@@ -1,5 +1,4 @@
 <?php 
-
     session_start();
     
     //SQLI DATABASE CREDENTIALS
@@ -9,11 +8,7 @@
     $database_name = "talaash";
     $_SESSION['dbConnection'] = mysqli_connect($http_host, $database_userName, $database_userPassword, $database_name);
     
-    
 
-
-    //SESSION VARIABLES
-    $_SESSION['userIsLogged'] = FALSE;
 
 
 ?>
