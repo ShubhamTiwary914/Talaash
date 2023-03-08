@@ -1,3 +1,9 @@
 Holds list of all variables in client session for documentation
 
 1. userIsLogged (boolean):  true if user has logged in, false if not
+2. currentPage (strong): 
+
+3. username (string)
+4. email (string)
+5. imageDir(string)
+6. phone

@@ -94,7 +94,15 @@
             $verifiedPassword = password_verify($password, $userRow['pwd']);
             if($verifiedPassword){   //Password matches with user Data, login user
                 generate_userLoginCookie($rememberUser);
-                echo '{ "correctPwd": true,  "correctUserData": true}';
+                $fetched_username = $userRow['email'];
+                $fetched_imageDir = $userRow['image_dir'];
+                $fetched_phoneNo = $userRow['phone_no'];
+                $fetched_city = $userRow['city'];
+                $fetched_state = $userRow['state'];
+                $fetched_location = $userRow['location'];
+                $fetched_creationDate = $userRow['creationDate'];
+                $fetched_isGovernmentOfficial = $userRow['isGovernmentOfficial'];
+                echo '{ "correctPwd": true,  "correctUserData": true, "username": '.$fetched_username.', "imageDir": '.$fetched_imageDir.', "phone": '.$fetched_phoneNo.', "city": '.$fetched_city.', "state": '.$fetched_state.', "location": '.$fetched_location.', "creationDate": '.$fetched_creationDate.', "isGovernmentOfficial": '.$fetched_isGovernmentOfficial.'}';
             }else{   //Incorrect password
                 echo '{ "correctPwd": false,  "correctUserData": true}';
             }

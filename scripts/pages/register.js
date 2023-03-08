@@ -143,7 +143,7 @@ function loginUser(){
     }, (response)=>{
         var loginResponse = JSON.parse(response);
         if(loginResponse.correctUserData && loginResponse.correctPwd){ //User is verified, Redirect to Homepage
-            sessionStorage.setItem('userIsLogged', true)
+            sessionStorage.setItem('userIsLogged', true);
             window.location.href = './../index.html';
         }else
             alert_loginErrors(loginResponse)

@@ -5,9 +5,9 @@
 
     #headerMain{
         #mainLogo{
-            padding: 10px;
-            width: 90%;
-            height: 90%;
+            padding: 5px;
+            width: 80%;
+            height: 80%;
         }
     
         #headerTitle{
@@ -33,10 +33,11 @@
     }
     
     #headerNavBar{
-        background-color: $darkOrange;
+        background-color: #73acff;
         font-size: 150%;
         color: white;
-        height: 120%;
+        height: 70%;
+        margin-top: -2%;
 
         .navLink{
             border-right: 2px solid white;

@@ -1,1 +1,15 @@
-/* No CSS *//*# sourceMappingURL=profile.css.map */
+#mainBody #leftBody #profile-image {
+  width: 100%;
+  height: 100%;
+}
+
+#mainBody #leftBody #profile-uname {
+  font-size: x-large;
+  letter-spacing: 2px;
+}
+
+#mainBody #leftBody #profile-email {
+  font-size: large;
+  letter-spacing: 1px;
+}
+/*# sourceMappingURL=profile.css.map */
