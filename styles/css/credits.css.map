@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../scss/credits.scss"
+    ],
+    "names": [],
+    "file": "credits.css"
+}

@@ -16,7 +16,7 @@ function loadHeaderComponent( imagePath ){
                 <div class='col-2'>  <img src=${imagePath} id='mainLogo'/>  </div>    
                 <div class='col-4'>   <br /> <br />
                     <div class='row' id='headerTitle'> TALAASH   </div>
-                    <div class='row' id='headerQuote'>   Talaash Karo, Tension Nehi   </div>
+                    <div class='row' id='headerQuote'>   Talaash Karo, Tension Nahi   </div>
                 </div> 
                 <div class='col-2'> </div>
                 <div class='col-4'> <br /> <br /> <br />
@@ -55,6 +55,7 @@ let pagesLinks = { //links of pages from the root directory's perspective
     'chats': 'pages/chat.html',
     'aboutUs': 'pages/credits.html'
 };
+
 //link to root directory from the html file where the component is present in currently
 function moveTo_headerLink( rootPath, targetPage){  
     let targetPath = `${rootPath}${pagesLinks[targetPage]}`;
