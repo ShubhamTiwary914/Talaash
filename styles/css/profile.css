@@ -1,15 +1,49 @@
+#mainBody .profile-header {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  letter-spacing: 1px;
+  font-size: 170%;
+  color: #3c3939;
+}
+
 #mainBody #leftBody #profile-image {
   width: 100%;
   height: 100%;
 }
 
-#mainBody #leftBody #profile-uname {
-  font-size: x-large;
+#mainBody #leftBody #profile-username {
+  font-size: 200%;
   letter-spacing: 2px;
 }
 
 #mainBody #leftBody #profile-email {
-  font-size: large;
+  font-size: 150%;
   letter-spacing: 1px;
+}
+
+#mainBody #leftBody .seperator {
+  margin-left: 20%;
+  width: 80%;
+}
+
+#mainBody #leftBody #profile-description {
+  height: 100%;
+}
+
+#mainBody #rightBody {
+  margin-top: 5%;
+  padding-left: 5%;
+  border-left: 1px solid gray;
+}
+
+#mainBody #rightBody #location-box {
+  margin-top: 5%;
+}
+
+#mainBody #rightBody .profile-address {
+  font-size: 130%;
+}
+
+#mainBody #rightBody .profile-credentials {
+  font-size: 130%;
 }
 /*# sourceMappingURL=profile.css.map */

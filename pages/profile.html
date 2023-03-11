@@ -9,6 +9,7 @@
     <script src="./../scripts/packages/jquery.js"></script>
     <link rel="stylesheet" href="./../styles/css/bs5/css/bootstrap.css">
     <script src="./../styles/css/bs5/js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="./../styles/css/bs5/packages/bootstrap-icons.css">
 
 
     <!-- JS Files  -->
@@ -26,25 +27,78 @@
     <div id="header"> </div>
     <div id="mainBody"> 
          <div class='container-fluid'>
-            <div class='col-7' id='leftBody'>
-                <div class='row'>
-                    <div class="col-4 bg-danger">
-                        <img src="./../assets/profiles/default.png" id='profile-image'>
-                    </div>
-                    <div class='col-7'>  <br /> <br /> <br /> <br />
-                        <div class='' id='profile-uname'> Username </div>  
-                        <div class='' id='profile-email'> Email </div>   
-                    </div>
-                </div>
-                <div class='row'>
 
+            <div class='row'>
+                <div class='col-6' id='leftBody'>
+                    <div class='row'>
+                        <div class="col-2"></div>
+                        <div class="col-4">
+                            <img src="./../assets/profiles/default.png" id='profile-image'>
+                        </div>
+                        <div class='col-6'>  <br /> <br /> <br /> <br />
+                            <div class='' id='profile-username'> Username </div>  <br />
+                            <div class='' id='profile-email'> Email </div>   
+                        </div>
+                    </div>
+    
+                    <div class='row'>
+                        <hr class='seperator'/>
+                    </div>
+                    
+                    <div class='row'>
+                        <div class="col-3"></div>
+                        <div class='col-8'>
+                            <span class='profile-header'>Description</span> <br /> <br />
+                            <textarea class="form-control" id="profile-description" rows="3" placeholder="Write a description about yourself"></textarea> <br />
+                            <button class="btn btn-primary" id='profile-descriptionSave' disabled>Save</button>
+                            <br /> <br />
+                        </div>
+                    </div> <br /> <br /> <br /> <br /> <br /> <br />
+                    <hr class='seperator'/>
+                    
+                    <div class='row'> 
+                        <div class="col-3"></div>
+                        <div class='col-8'>
+                            <span class='profile-header'>Reports</span> <br /> <br />
+                        </div>  
+                    </div>
                 </div>
+
+                <div class='col-1'></div>
+
+
+    
+                <div class='col-5' id='rightBody'> 
+                    <div class='row'>  
+                        <div class="col-12" id='location-box'>
+                            <span class='profile-header mb-5'>Address</span> <br /> <br /> <br />
+                            <span id='profile-location' class='profile-address'> Add Location </span>
+                            <button class="btn btn-primary address-save" id='location-save'> Save </button> <br /> <br />
+                            <input id='profile-city' class='profile-address' placeholder='Add City Details'> 
+                            <button class="btn btn-primary address-save" id='city-save'> Save </button> <br /> <br />
+                            <input id='profile-state' class='profile-address' placeholder='Add State Details'> 
+                            <button class="btn btn-primary address-save" id='state-save'> Save </button> <br />
+                        </div>
+                    </div> 
+                    <hr class='seperator'/>
+
+                    <div class="row">
+                        <div class="col-12" id='credentials-box'>
+                            <span class='profile-header mb-5'>Credentials</span> <br /> <br /> <br />
+                            <div id='profile-notifications' class='profile-credentials'> 
+                                Notifications  
+                                <i class="bi-globe"></i>
+                            </div> <br />
+                            <div class='profile-credentials'> 
+                                Phone number:   <span id='profile-phone'></span>    
+                            </div>
+                        </div>
+                    </div>
+                </div>    
             </div>
-            <div class='col-5' id='rightBody'>
-            
-            </div>
+
          </div>
-    </div>
+    </div> <br /> <br /> <br /> <br /> <br />
     <div id="footer">  </div>
 </body>
 </html>

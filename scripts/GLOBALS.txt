@@ -5,5 +5,12 @@ Holds list of all variables in client session for documentation
 
 3. username (string)
 4. email (string)
-5. imageDir(string)
-6. phone
+5. imageDir (string)
+6. phone (string)
+7. city (string)
+8. state (string)
+9. location (string)
+10. creationDate (string)
+11. isGovernmentOfficial (boolean)
+12. userDataList (Array) 
+13. description (string)

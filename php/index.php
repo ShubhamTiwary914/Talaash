@@ -3,6 +3,4 @@
 <?php 
     include './dbconn.php';
 
-
-
 ?>

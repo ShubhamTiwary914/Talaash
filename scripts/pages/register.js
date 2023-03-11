@@ -144,9 +144,20 @@ function loginUser(){
         var loginResponse = JSON.parse(response);
         if(loginResponse.correctUserData && loginResponse.correctPwd){ //User is verified, Redirect to Homepage
             sessionStorage.setItem('userIsLogged', true);
+            set_UserSessionData(loginResponse);
             window.location.href = './../index.html';
         }else
             alert_loginErrors(loginResponse)
     });
+}
+
+function set_UserSessionData(loginResponse){
+    let userKeys = Object.keys(loginResponse);
+    userKeys = userKeys.slice(2, userKeys.length);
+    sessionStorage.setItem('userDataList', JSON.stringify(userKeys));
+    for(let keyIndex = 0; keyIndex < userKeys.length; keyIndex++){
+        let key = userKeys[keyIndex]
+        sessionStorage.setItem(key,  loginResponse[key] );
+    }
 }
 

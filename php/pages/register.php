@@ -94,7 +94,8 @@
             $verifiedPassword = password_verify($password, $userRow['pwd']);
             if($verifiedPassword){   //Password matches with user Data, login user
                 generate_userLoginCookie($rememberUser);
-                $fetched_username = $userRow['email'];
+                $fetched_username = $userRow['username'];
+                $fetched_email = $userRow['email'];
                 $fetched_imageDir = $userRow['image_dir'];
                 $fetched_phoneNo = $userRow['phone_no'];
                 $fetched_city = $userRow['city'];
@@ -102,7 +103,8 @@
                 $fetched_location = $userRow['location'];
                 $fetched_creationDate = $userRow['creationDate'];
                 $fetched_isGovernmentOfficial = $userRow['isGovernmentOfficial'];
-                echo '{ "correctPwd": true,  "correctUserData": true, "username": '.$fetched_username.', "imageDir": '.$fetched_imageDir.', "phone": '.$fetched_phoneNo.', "city": '.$fetched_city.', "state": '.$fetched_state.', "location": '.$fetched_location.', "creationDate": '.$fetched_creationDate.', "isGovernmentOfficial": '.$fetched_isGovernmentOfficial.'}';
+                $fetched_description = $userRow['description'];
+                echo '{ "correctPwd": true,  "correctUserData": true, "username": "'.$fetched_username.'", "email": "'.$fetched_email.'", "imageDir": "'.$fetched_imageDir.'", "phone": "'.$fetched_phoneNo.'", "city": "'.$fetched_city.'", "state": "'.$fetched_state.'", "location": "'.$fetched_location.'", "creationDate": "'.$fetched_creationDate.'", "isGovernmentOfficial": "'.$fetched_isGovernmentOfficial.'", "description": "'.$fetched_description.'"}';
             }else{   //Incorrect password
                 echo '{ "correctPwd": false,  "correctUserData": true}';
             }
