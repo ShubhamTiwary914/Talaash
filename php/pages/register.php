@@ -104,7 +104,8 @@
                 $fetched_creationDate = $userRow['creationDate'];
                 $fetched_isGovernmentOfficial = $userRow['isGovernmentOfficial'];
                 $fetched_description = $userRow['description'];
-                echo '{ "correctPwd": true,  "correctUserData": true, "username": "'.$fetched_username.'", "email": "'.$fetched_email.'", "imageDir": "'.$fetched_imageDir.'", "phone": "'.$fetched_phoneNo.'", "city": "'.$fetched_city.'", "state": "'.$fetched_state.'", "location": "'.$fetched_location.'", "creationDate": "'.$fetched_creationDate.'", "isGovernmentOfficial": "'.$fetched_isGovernmentOfficial.'", "description": "'.$fetched_description.'"}';
+                $fetched_ID = $userRow['ID'];
+                echo '{ "correctPwd": true,  "correctUserData": true, "username": "'.$fetched_username.'", "email": "'.$fetched_email.'", "imageDir": "'.$fetched_imageDir.'", "phone": "'.$fetched_phoneNo.'", "city": "'.$fetched_city.'", "state": "'.$fetched_state.'", "location": "'.$fetched_location.'", "creationDate": "'.$fetched_creationDate.'", "isGovernmentOfficial": "'.$fetched_isGovernmentOfficial.'", "description": "'.$fetched_description.'", "ID": "'.$fetched_ID.'"}';
             }else{   //Incorrect password
                 echo '{ "correctPwd": false,  "correctUserData": true}';
             }

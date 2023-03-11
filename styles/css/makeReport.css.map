@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AACI,SADK,CACL,qBAAqB,CAAA;EACjB,QAAQ,EAAE,KAAK;EACf,OAAO,EAAE,aAAa;CACzB;;AAJL,AAMI,SANK,CAML,YAAY,CAAA;EACR,MAAM,EAAE,EAAE;CACb;;AARL,AAUI,SAVK,CAUL,cAAc,CAAA;EACV,WAAW,EAAE,GAAG;CACnB",
+    "sources": [
+        "../scss/makeReport.scss"
+    ],
+    "names": [],
+    "file": "makeReport.css"
+}

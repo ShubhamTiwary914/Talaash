@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Report</title>
+
+
+    <!-- Libraries  -->
+    <script src="./../scripts/packages/jquery.js"></script>
+    <link rel="stylesheet" href="./../styles/css/bs5/css/bootstrap.css">
+    <script src="./../styles/css/bs5/js/bootstrap.bundle.js"></script>
+
+
+    <!-- JS Files  -->
+    <script src="./../components/header.js"></script>
+    <script src="./../components/footer.js"></script>
+    <script src="./../scripts/pages/makeReport.js"></script>
+
+    <!-- StyleSheets  -->
+    <link rel="stylesheet" href="./../styles/css/makeReport.css">
+    <link rel="stylesheet" href="./../styles/css/footer.css">
+    <link rel="stylesheet" href="./../styles//css/header.css">
+
+</head>
+<body>
+    <div id="header"> </div>
+    <div id="mainBody"> 
+        <div class='container'>
+            <div class='alert alert-success' id='report-created-alert'>Your report has been Successfully created! </div>
+            <div class='row'>
+                <div class='col-8'>
+                    <form id='report-form'>
+                        <br /> <br />
+                        <div id='report-form-header'> <h3> Create Report  </h3> </div>
+                        <hr /> <br /> <br />
+
+                        <select class="form-select" id='report-form-category'>
+                            <option selected> Select the type of report you want to make </option>
+                            <option> Missing Report - You have lost something you want to report </option>
+                            <option> Spotted Report - You found a missing subject you want to help find </option>
+                        </select>
+                        <br /> <br />
+
+                        <div id='report-form-IDbox'>
+                            <label class="form-label"> <h5> Enter Report ID </h5> </label>
+                            <input class="form-control" type="number" id="report-form-ID" />
+                            <br /> <br />
+                        </div> 
+
+                        <select class="form-select" id='report-form-type'>
+                            <option selected> What type of subject is to be reported? </option>
+                            <option> Human </option>
+                            <option> Pet </option>
+                            <option> Item </option>
+                        </select> 
+                        <br /> <br /> <br />
+
+                        <div> 
+                            <label for="formFile" class="form-label">
+                                <h5>
+                                    Add Identification Image
+                                    <span class='report-form-optionalText'> </span>
+                                </h5>
+                            </label>
+                            <input class="form-control report-upload" type="file" id="report-form-image">
+                        </div> <br /> <br /> <br />
+
+                        <div>
+                            <label class="form-label">
+                                <h5>
+                                    Add Description
+                                    <span class='report-form-optionalText'> </span>
+                                </h5>
+                            </label>
+                            <textarea class="form-control" id='report-form-description'></textarea>
+                        </div> <br /> <br />
+
+                        
+                        <div id='report-form-additionals'>
+                            <div>
+                                <label class='form-label'> Enter Last Seen Time </label>
+                                <input type='time' class='form-control' id='report-form-time'/>
+                            </div> <br />
+
+                            <div>
+                                <label class='form-label'> Enter Last Seen Date</label>
+                                <input type='date' class='form-control' id='report-form-date'/>
+                            </div> <br/ > <br />
+
+                            <div> 
+                                <label class="form-label"> <h5> Add FIR Copy (if reported) </h5> </label>
+                                <input class="form-control report-upload" type="file" id="report-form-FIR">
+                            </div> <br /> <br /> <br />
+
+                            <div>
+                                <label class="form-label"> <h5> Enter Last Seen location </h5> </label>
+                                <input class="form-control" type="text" id="report-form-location" />
+                            </div>
+                        </div>
+                    </form>
+                        <div>
+                            <br />
+                            <button class='btn btn-success' id='report-submit'> Submit </button>
+                        </div>
+                        <br /> <br />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer"> </div>
+</body>
+</html>

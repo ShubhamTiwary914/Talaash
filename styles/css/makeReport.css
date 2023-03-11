@@ -1,0 +1,13 @@
+#mainBody #report-created-alert {
+  position: fixed;
+  padding: 2% 10% 2% 10%;
+}
+
+#mainBody #report-form {
+  margin: 5%;
+}
+
+#mainBody #report-submit {
+  margin-left: 10%;
+}
+/*# sourceMappingURL=makeReport.css.map */

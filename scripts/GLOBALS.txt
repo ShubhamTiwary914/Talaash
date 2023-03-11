@@ -14,3 +14,7 @@ Holds list of all variables in client session for documentation
 11. isGovernmentOfficial (boolean)
 12. userDataList (Array) 
 13. description (string)
+14. ID (int) : current User's ID
+
+
+15. reportType (string): type of report user has clicked to make => resets when user leaves make-report page
