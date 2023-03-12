@@ -3,7 +3,7 @@
 
 $(document).ready(function(){
     $('#header').html(loadHeaderComponent( "./../assets/main/mainLogo.png" ));
-    loadHeaderStyles('aboutUs');
+    loadHeaderStyles('tracker');
     $('#footer').html( loadFooterComponent() );
 
     $('.navLink').on('click', function(){

@@ -9,5 +9,8 @@ $(document).ready(function(){
         let targetPage =  $(this).attr('id').split('-')[0];
         moveTo_headerLink('./../', targetPage); 
     });
+
+
+    
 });
 

@@ -33,8 +33,8 @@ function loadHeaderComponent( imagePath ){
                 <div class='col-2 navLink' id='home-link'> Home </div>
                 <div class='col-2 navLink' id='profile-link'> Profile  </div>
                 <div class='col-2 navLink' id='reports-link'> Reports  </div>
-                <div class='col-2 navLink' id='chats-link'> Chats  </div>
-                <div class='col-2 navLink' id='aboutUs-link'> About Us  </div>
+                <div class='col-2 navLink' id='chats-link'> Inbox  </div>
+                <div class='col-2 navLink' id='tracker-link'> Tracker  </div>
             </div>
 
         </div>
@@ -53,7 +53,7 @@ let pagesLinks = { //links of pages from the root directory's perspective
     'profile': 'pages/profile.html',
     'reports': 'pages/feed.html',
     'chats': 'pages/chat.html',
-    'aboutUs': 'pages/credits.html'
+    'tracker': 'pages/tracker.html'
 };
 
 //link to root directory from the html file where the component is present in currently
