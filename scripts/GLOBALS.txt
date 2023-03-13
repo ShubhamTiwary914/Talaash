@@ -1,8 +1,11 @@
 Holds list of all variables in client session for documentation
 
+------- SIGNUP / LOGIN -------
 1. userIsLogged (boolean):  true if user has logged in, false if not
 2. currentPage (strong): 
 
+
+ --------- USER PROFILE ----------
 3. username (string)
 4. email (string)
 5. imageDir (string)
@@ -17,4 +20,7 @@ Holds list of all variables in client session for documentation
 14. ID (int) : current User's ID
 
 
+
+------------ REPORTS ------------
 15. reportType (string): type of report user has clicked to make => resets when user leaves make-report page
+16. reportID (int): report ID that user has spotted

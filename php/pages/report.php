@@ -53,6 +53,5 @@
 
         $query = "INSERT INTO report(classification, last_seenTime, firCopy, identificationImage, description, isActive, byUser, last_seenLocation, type) VALUES('$classification', '$last_seenTime', '$firCopy', '$identificationImage', '$description', $isActive, $byUser, '$last_seenLocation', '$type')";
         mysqli_query( $_SESSION['dbConnection'], $query);
-
     }
 ?>

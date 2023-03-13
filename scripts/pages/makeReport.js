@@ -3,6 +3,16 @@
     Loads and changes form dynamically depending on whether the report type is a new missing report or spotted report
 */
 
+function set_makeReportType(){
+    let reportType = sessionStorage.getItem('reportType').split('-')[1];
+    $(`#report-category-${reportType}`).attr('selected', true);
+    if( sessionStorage.getItem('reportID') != null ){
+        $('#report-form-ID').val(sessionStorage.getItem('reportID'))
+        sessionStorage.setItem('reportID', null);
+    } 
+    categorySelection_changed();
+}
+
 
 function alertSuccessful_reportCreation(type){
     if(type == 'success'){
@@ -15,6 +25,14 @@ function alertSuccessful_reportCreation(type){
     }
 }
 
+function send_ReportSpottedMessage(reportID, finderID, finderUsername){
+    $.post('./../php/pages/inbox.php', {
+        spottedMessage: true,
+        reportID: reportID,
+        finderID: finderID,
+        finderUsername: finderUsername
+    }, (res) =>{  console.log(res) });
+}
 
 function categorySelection_changed(){
     let category =  $('#report-form-category').val().split(" ")[0];
@@ -29,6 +47,8 @@ function categorySelection_changed(){
         $('#report-form-IDbox').hide();
     }
 }
+
+
 
 
 //upload the report image and report FIR files
@@ -51,8 +71,6 @@ function uploadFiles( eventObjID ){
         });
     }
 }
-
-
 function submitReport(){
     uploadFiles('report-form-image');
     let imageTitle = !($(`#report-form-image`).val() == "") ? $(`#report-form-image`)[0].files[0]['name'] : "";
@@ -64,8 +82,12 @@ function submitReport(){
     }
     $.post('./../php/pages/report.php', reportData, (response)=>{
         alertSuccessful_reportCreation('success');
+        if($('#report-form-category').val().split(" ")[0]   ==  'Spotted' )
+            send_ReportSpottedMessage( $('#report-form-ID').val(),  sessionStorage.getItem('ID') , sessionStorage.getItem('username'));
     });
 }
+
+
 
 
 
@@ -73,6 +95,8 @@ $(document).ready(function(){
     $('#header').html(loadHeaderComponent( "./../assets/main/mainLogo.png" ));
     $('#footer').html( loadFooterComponent() );
     $('#report-created-alert').hide()
+    set_makeReportType();
+    
 
     $('.navLink').on('click', function(){
         let targetPage =  $(this).attr('id').split('-')[0];

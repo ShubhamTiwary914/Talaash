@@ -12,21 +12,20 @@
 
         #feed-content{
             .report{
+                margin-left: 10%;
                 .report-image{
                     width: 60%;
                     height: 50%;
-                    margin-left: 10%;
                 }
                 .report-description{
                     font-size: 130%;
-                    margin-left: 10%;
                 }
                 .report-seperator{
                     width: 90%;
-                    margin-left: 5%;
+                    margin-left: -5%;
                 }
-                .report-btn{
-                    margin-left: 10%;
+                .report-last-seenTime, .report-last-seenLocation{
+                    font-size: 130%;
                 }
             }
 

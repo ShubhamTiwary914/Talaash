@@ -8,10 +8,10 @@ let reportsArray = new Array();
 
 
 
-function filterOwnReports(byUserID){
+function filterOwnReports(byUserID, reportsIndex){
     let currentUserID = sessionStorage.getItem('ID');
     if(!(currentUserID == byUserID)){
-        return `<button class='report-btn btn btn-primary'> Report Spotted </button>` 
+        return `<button class='report-spotted-btn btn btn-primary' id='report-${reportsArray[reportsIndex]['ID']}'> Report Spotted </button>` 
     }
     return '';
 }
@@ -21,16 +21,22 @@ function loadReports_intoFeed(){
     if(reportsArray.length > 0){
         let new_reportsFeed = "";
         for(let index=0; index < reportsArray.length; index++){
-            let currentReport = `
+            if( reportsArray[index]['type'] == "Missing" ){
+                let currentReport = `
                 <div class='report'> 
                     <img src='./../upload/reports/${reportsArray[index]['classification']}s/${reportsArray[index]['identificationImage']}' 
                     class='report-image'/> <br /> <br />
-                    <div class='report-description'> ${reportsArray[index]['description']} </div> <br />
-                    ${filterOwnReports(reportsArray[index]['byUser'])} <br />
+                    <div class='report-description'> <b> Description </b> ${reportsArray[index]['description']}   </div> <br />
+                    <div class='report-last-seenTime'> <b> Last seen Time: </b>  ${reportsArray[index]['last_seenTime']} </div> <br />
+                    <div class='report-last-seenLocation'> <b> Last seen Location: </b>  ${reportsArray[index]['last_seenLocation']} </div> <br />
+                    <div class='report-ID'> <b> Report ID: </b>  ${reportsArray[index]['ID']} </div> <br />
+                    
+                    ${filterOwnReports( reportsArray[index]['byUser'], index )} <br />
                     <hr class='report-seperator' />
-                </div> <br /> <br />
-            `;
-            new_reportsFeed += currentReport;
+                </div> 
+                `;
+                new_reportsFeed += currentReport;
+            }
         }
         $('#feed-content').html(new_reportsFeed);
     }else{
@@ -51,6 +57,7 @@ function loadReports_fromDatabase(){
     },(reports)=>{
         let loadedReports = JSON.parse(reports);
         let reportsRetrieved = 0;
+        //ADD report to reportsArray after checking if it already doesnt have a report enlisted in it
         for(let i = 0; i < loadedReports.length; i++){
             let matchedReport = false;
             for(let j=0; j< reportsArray.length; j++){
@@ -92,6 +99,14 @@ $(document).ready(function(){
         window.location.href = './makeReport.html';
     });
 
+    $('#feed-content').on('click', '.report-spotted-btn', function(){
+        let reportID = $(this).attr('ID').split('-')[1];
+        sessionStorage.setItem('reportID', reportID);
+        sessionStorage.setItem('reportType', 'create-spotted-report');
+        window.location.href = './makeReport.html';
+    });
 
 });
+
+
 

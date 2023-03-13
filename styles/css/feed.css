@@ -8,24 +8,26 @@
   padding: 3% 3% 1% 3%;
 }
 
+#mainBody #feed-box #feed-content .report {
+  margin-left: 10%;
+}
+
 #mainBody #feed-box #feed-content .report .report-image {
   width: 60%;
   height: 50%;
-  margin-left: 10%;
 }
 
 #mainBody #feed-box #feed-content .report .report-description {
   font-size: 130%;
-  margin-left: 10%;
 }
 
 #mainBody #feed-box #feed-content .report .report-seperator {
   width: 90%;
-  margin-left: 5%;
+  margin-left: -5%;
 }
 
-#mainBody #feed-box #feed-content .report .report-btn {
-  margin-left: 10%;
+#mainBody #feed-box #feed-content .report .report-last-seenTime, #mainBody #feed-box #feed-content .report .report-last-seenLocation {
+  font-size: 130%;
 }
 
 #mainBody #column-seperator {
