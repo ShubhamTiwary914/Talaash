@@ -2,51 +2,44 @@
 
 
 #header{
-
+    box-shadow: 1px 0.3px 3px rgb(95, 94, 94);
     #headerMain{
         #mainLogo{
             padding: 5px;
-            width: 80%;
-            height: 80%;
+            width: 47%;
+            height: 65%;
         }
     
         #headerTitle{
             color: $navyBlue;
-            font-size: xx-large;
+            font-size: larger;
             font-weight: bold;
             letter-spacing: 2px;
-        }
-        #headerQuote{
-            color: white;
-            font-size: 175%;
-            color: $navyBlue;
+            margin-left: 5%;
         }
     
         #input-search{
-            width: 100%;
-            height: 140%;
+            width: 90%;
+            height: 135%;
         }
     
         #search-btn{
-            height: 140%;
+            height: 130%;
+            margin-left: -30%;
         }
     }
     
-    #headerNavBar{
-        background-color: #73acff;
-        font-size: 150%;
-        color: white;
-        height: 70%;
-        margin-top: -2%;
-
-        .navLink{
-            border-right: 2px solid white;
-            text-align: center;
-            padding: 20px;
-            &:hover{
-                cursor: pointer;
-            }
+   
+    .navLink{
+        border-right: 2px solid white;
+        text-align: center;
+        padding: 20px;
+        font-size: 120%;
+        margin-left: 5%;
+        &:hover{
+            cursor: pointer;
         }
+        
     }
 
 

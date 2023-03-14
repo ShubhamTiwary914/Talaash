@@ -13,30 +13,29 @@ function loadHeaderComponent( imagePath ){
         <div class='container-fluid'> 
         
             <div class='row' id='headerMain'>
-                <div class='col-2'>  <img src=${imagePath} id='mainLogo'/>  </div>    
-                <div class='col-3'>  <br /> 
-                    <div class='row' id='headerTitle'> TALAASH   </div>
-                    <div class='row' id='headerQuote'>   Talaash Karo, Tension Nahi   </div>
-                </div> 
-                <div class='col-2'> </div>
-                <div class='col-4'> <br /> <br /> 
+                <div class='col-2'>
+                   <img src=${imagePath} id='mainLogo'/>  
+                   <div class='row' id='headerTitle'> TALAASH   </div>
+                </div>    
+                
+                <div class='col-6' id='headerNavBar'> 
+                    <br /> <br /> 
+                    <span class='col-2 navLink' id='home-link'> Home </span>
+                    <span class='col-2 navLink' id='profile-link'> Profile  </span>
+                    <span class='col-2 navLink' id='reports-link'> Reports  </span>
+                    <span class='col-2 navLink' id='chats-link'> Inbox  </span>
+                    <span class='col-2 navLink' id='tracker-link'> Tracker  </span>
+                </div>
+
+                <div class='col-4'>
+                    <br />  <br />
                     <div class='row'>
                         <div class='col-8'>  <input class='form-control' placeholder="Search..." id="input-search"/>  </div>
-                        <div class='col-4'>  
-                            <button class='btn btn-primary' id='search-btn'> Search </button>
-                        </div>
+                        <div class='col-4'>  <button class='btn btn-primary' id='search-btn'> Search </button>   </div>
                     </div>
                 </div>
             </div>
-
-            <div class='row' id='headerNavBar'> 
-                <div class='col-2 navLink' id='home-link'> Home </div>
-                <div class='col-2 navLink' id='profile-link'> Profile  </div>
-                <div class='col-2 navLink' id='reports-link'> Reports  </div>
-                <div class='col-2 navLink' id='chats-link'> Inbox  </div>
-                <div class='col-2 navLink' id='tracker-link'> Tracker  </div>
-            </div>
-
+                     
         </div>
     `;
 }
@@ -45,7 +44,7 @@ function loadHeaderComponent( imagePath ){
 function loadHeaderStyles(currentPage){
     //show current page user is on
     let currentLinkID = `#${currentPage}-link`;
-    $(currentLinkID).css({ 'background-color': "#0d212c" });
+    $(currentLinkID).css({ 'font-weight': "bold" });
 }
 
 let pagesLinks = { //links of pages from the root directory's perspective
