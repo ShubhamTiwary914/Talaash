@@ -1,7 +1,74 @@
+@import 'colors';
+
 #mainBody{
     #inbox{
         padding: 5%;
+
+        #inbox-content{
+            .inbox-message{
+                border-top: 1px solid rgba(46, 45, 45, 0.5);
+                border-bottom: 1px solid rgba(46, 45, 45, 0.5);
+                .message-username{
+                    font-size: 180%;
+                }
+                .message-userProfile{
+                    width: 100%;
+                    height: 100%;
+                }
+                .message-body{
+                    font-size: 120%;
+                    margin-left: 5%;
+                }
+
+            }
+        }
+    }
+
+
+    #chatBox{
+        position: fixed;
+        width: 100%;
+        height: 80%;
+        box-shadow: 3px 3px 2px rgb(109, 108, 108), -3px -3px 2px rgb(109, 108, 108);
+        margin: -10% 0% 0% 10%;
+        overflow-y: scroll;
+        background-color: white;
+
+        #chatBox-header{
+            box-shadow: 1px 0.1px 3px rgb(102, 101, 101);
+            padding: 1%;
+            font-size: 140%;
+
+            #chatBox-exit{
+                color: white;
+                width: 40%;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
         
+        #chatBox-content{
+            background-color: white;
+            .message-box{
+                box-shadow: 0.1px 0.2px 1px black, -0.1px -0.2px 1px black;
+                background-color: rgba(106, 106, 163, 0.3);
+                margin-bottom: 5px;
+                width: 40%;
+                padding: 1%;
+            }
+            .user-message{
+                background-color: rgba(157, 199, 115, 1);
+                padding: 1%;
+                width: 40%;
+                float: right;
+                margin-bottom: 5px;
+            }
+
+            .report-viewer{
+                font-size: 90%;
+            }
+        }
     }
 
 }

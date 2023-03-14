@@ -40,6 +40,7 @@
     if(isset($_POST['saveReport'])){
         $keys = array_keys($_POST);
 
+        $spottedReportID = $_POST['reportID'];
         $classification = strtolower($_POST['type']);
         $last_seenTime = $_POST['time'].", ".$_POST['date'];
         $firCopy = $_POST['FIRName'];
@@ -51,7 +52,7 @@
         $type = $_POST['category'];
         
 
-        $query = "INSERT INTO report(classification, last_seenTime, firCopy, identificationImage, description, isActive, byUser, last_seenLocation, type) VALUES('$classification', '$last_seenTime', '$firCopy', '$identificationImage', '$description', $isActive, $byUser, '$last_seenLocation', '$type')";
+        $query = "INSERT INTO report(classification, last_seenTime, firCopy, identificationImage, description, isActive, byUser, last_seenLocation, type, spottedReportID) VALUES('$classification', '$last_seenTime', '$firCopy', '$identificationImage', '$description', $isActive, $byUser, '$last_seenLocation', '$type', '$spottedReportID')";
         mysqli_query( $_SESSION['dbConnection'], $query);
     }
 ?>

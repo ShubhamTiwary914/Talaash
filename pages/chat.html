@@ -9,6 +9,7 @@
     <script src="./../scripts/packages/jquery.js"></script>
     <link rel="stylesheet" href="./../styles/css/bs5/css/bootstrap.css">
     <script src="./../styles/css/bs5/js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="./../styles/css/bs5/css/bootstrap-icons.css">
 
 
     <!-- JS Files  -->
@@ -25,14 +26,37 @@
 <body>
     <div id="header"> </div>
     <div id="mainBody"> 
+
+
+        <div class='container' id='chatBox' hidden>
+            <div class='row' id='chatBox-header'>
+                <div class="col-3" id='chatBox-username'> </div>
+                <div class='col-8'></div>
+                <div class='col-1'> <img src="./../styles/bs5_icons/x-lg.svg" id='chatBox-exit'/>  </div>
+            </div>
+
+            <div class="row">
+                <input class="form-control" placeholder="Enter your message here"  id='chatBox-input'/>
+            </div>
+            <br />
+            <div class='row' id='chatBox-content'>
+                
+            </div>
+
+         </div>
+
          <div class='container'>
             <div class='row'>
                 <div id='inbox'>
-                    <div id='inbox-header'> <h3> Inbox </h3> </div>
-                    <hr />
+                    <div id='inbox-header'> <h2> Inbox </h2> </div>
+                     <br /> <br />
+
+                    <div id='inbox-content'>
+                        
+                    </div>
                 </div>
             </div>
-         </div>
+         </div>  
     </div>
     <div id="footer">  </div>
 </body>
