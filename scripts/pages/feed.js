@@ -79,7 +79,7 @@ function loadReports_fromDatabase(){
 $(document).ready(function(){
     $('#header').html(loadHeaderComponent( "./../assets/main/mainLogo.png" ));
     loadHeaderStyles('reports');
-    $('#footer').html( loadFooterComponent() );
+    $('#footer').html( loadFooterComponent('./../') );
     loadReports_fromDatabase();
 
 

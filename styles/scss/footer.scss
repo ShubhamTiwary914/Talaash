@@ -1,10 +1,35 @@
 @import 'colors';
 
+
 #footerBox{
     background-color: $navyBlue;
     color: white;
     padding-left: 10%;
-    padding-top: 5%;
-    padding-bottom: 15%;
-    //width: 120%;
+    padding-top: 3%;
+    padding-bottom: 5%;
+    
+    .footer-header{
+        font-weight: bold;
+        letter-spacing: 1px;
+    }   
+
+    .footer-link{
+        margin-top: 2%;
+        &:hover{
+            cursor: pointer;
+            text-shadow: 0.3px 0.2px 0.4px white;
+        }
+    }
+
+    .social-icon{
+        width: 6%;
+        height: 6%;
+    }
+
+    #footer-outro{
+        box-shadow: 0px -0.7px 1px rgb(158, 158, 163);
+        width: 60%;
+        padding-top: 3%;
+    }
+
 }

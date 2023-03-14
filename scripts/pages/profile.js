@@ -92,7 +92,7 @@ $(document).ready(function(){
     load_userSessionData();
     $('#header').html(loadHeaderComponent( "./../assets/main/mainLogo.png" ));
     loadHeaderStyles('profile');
-    $('#footer').html( loadFooterComponent() );
+    $('#footer').html( loadFooterComponent('./../') );
   
 
     $('.navLink').on('click', function(){  

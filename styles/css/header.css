@@ -1,6 +1,6 @@
 #header {
-  -webkit-box-shadow: 1px 0.3px 3px #5f5e5e;
-          box-shadow: 1px 0.3px 3px #5f5e5e;
+  -webkit-box-shadow: 1px 0.5px 5px #5f5e5e;
+          box-shadow: 1px 0.5px 5px #5f5e5e;
 }
 
 #header #headerMain #mainLogo {
@@ -20,11 +20,15 @@
 #header #headerMain #input-search {
   width: 90%;
   height: 135%;
+  -webkit-box-shadow: 1px 1px 3px #b8b2b2;
+          box-shadow: 1px 1px 3px #b8b2b2;
 }
 
 #header #headerMain #search-btn {
   height: 130%;
   margin-left: -30%;
+  -webkit-box-shadow: 1px 1px 3px #829ae1;
+          box-shadow: 1px 1px 3px #829ae1;
 }
 
 #header .navLink {

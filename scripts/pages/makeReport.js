@@ -93,7 +93,7 @@ function submitReport(){
 
 $(document).ready(function(){
     $('#header').html(loadHeaderComponent( "./../assets/main/mainLogo.png" ));
-    $('#footer').html( loadFooterComponent() );
+    $('#footer').html( loadFooterComponent('./../') );
     $('#report-created-alert').hide()
     set_makeReportType();
     

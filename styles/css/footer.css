@@ -2,7 +2,33 @@
   background-color: #0d212c;
   color: white;
   padding-left: 10%;
-  padding-top: 5%;
-  padding-bottom: 15%;
+  padding-top: 3%;
+  padding-bottom: 5%;
+}
+
+#footerBox .footer-header {
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+#footerBox .footer-link {
+  margin-top: 2%;
+}
+
+#footerBox .footer-link:hover {
+  cursor: pointer;
+  text-shadow: 0.3px 0.2px 0.4px white;
+}
+
+#footerBox .social-icon {
+  width: 6%;
+  height: 6%;
+}
+
+#footerBox #footer-outro {
+  -webkit-box-shadow: 0px -0.7px 1px #9e9ea3;
+          box-shadow: 0px -0.7px 1px #9e9ea3;
+  width: 60%;
+  padding-top: 3%;
 }
 /*# sourceMappingURL=footer.css.map */

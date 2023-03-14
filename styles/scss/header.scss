@@ -2,7 +2,7 @@
 
 
 #header{
-    box-shadow: 1px 0.3px 3px rgb(95, 94, 94);
+    box-shadow: 1px 0.5px 5px rgb(95, 94, 94);
     #headerMain{
         #mainLogo{
             padding: 5px;
@@ -21,11 +21,13 @@
         #input-search{
             width: 90%;
             height: 135%;
+            box-shadow: 1px 1px 3px rgb(184, 178, 178);
         }
     
         #search-btn{
             height: 130%;
             margin-left: -30%;
+            box-shadow: 1px 1px 3px rgba(130, 154, 225, 1);
         }
     }
     

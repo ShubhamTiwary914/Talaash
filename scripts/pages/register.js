@@ -18,7 +18,7 @@ let rememberMeChecker = false;
 
 $(document).ready(function(){
     //Loading Component and switches
-    $('#footer').html(loadFooterComponent());
+    $('#footer').html(loadFooterComponent('./../'));
     $('#switchInput').on('click', ()=>{
         userType_labelSwitcher();
     });

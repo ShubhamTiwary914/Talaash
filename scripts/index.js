@@ -21,7 +21,7 @@ $(document).ready(function(){
     checkUser_logs();
     $('#header').html(loadHeaderComponent( "./assets/main/mainLogo.png" ));
     loadHeaderStyles('home');
-    $('#footer').html( loadFooterComponent() );
+    $('#footer').html( loadFooterComponent('./') );
 
 
     $('.navLink').on('click', function(){

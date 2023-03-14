@@ -205,7 +205,7 @@ function clearMessages(){
 $(document).ready(function(){
     $('#header').html(loadHeaderComponent( "./../assets/main/mainLogo.png" ));
     loadHeaderStyles('chats');
-    $('#footer').html( loadFooterComponent() );
+    $('#footer').html( loadFooterComponent('./../') );
     load_userMessages_fromDatabase();
 
     $('.navLink').on('click', function(){
