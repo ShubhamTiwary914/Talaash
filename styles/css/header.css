@@ -35,11 +35,12 @@
   border-right: 2px solid white;
   text-align: center;
   padding: 20px;
-  font-size: 120%;
+  font-size: 140%;
   margin-left: 5%;
 }
 
 #header .navLink:hover {
   cursor: pointer;
+  text-shadow: 0.4px 0.2px 0.4px #0d212c;
 }
 /*# sourceMappingURL=header.css.map */

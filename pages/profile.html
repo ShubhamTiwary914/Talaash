@@ -26,6 +26,9 @@
 <body>
     <div id="header"> </div>
     <div id="mainBody"> 
+
+     
+
          <div class='container-fluid'>
 
             <div class='row'>
@@ -45,12 +48,14 @@
                         <hr class='seperator'/>
                     </div>
                     
+                    <div class='alert alert-success' id='profile-alert'>  </div>
+
                     <div class='row'>
                         <div class="col-3"></div>
                         <div class='col-8'>
                             <span class='profile-header'>Description</span> <br /> <br />
                             <textarea class="form-control" id="profile-description" rows="3" placeholder="Write a description about yourself"></textarea> <br />
-                            <button class="btn btn-primary" id='profile-descriptionSave' disabled>Save</button>
+                            <button class="btn btn-primary" id='profile-descriptionSave'>Save</button>
                             <br /> <br />
                         </div>
                     </div> <br /> <br /> <br /> <br /> <br /> <br />
@@ -59,7 +64,8 @@
                     <div class='row'> 
                         <div class="col-3"></div>
                         <div class='col-8'>
-                            <span class='profile-header'>Reports</span> <br /> <br />
+                            <span class='profile-header'>Your Reports</span> <br /> <br />
+                            <div id='profile-userReports'>  </div>
                         </div>  
                     </div>
                 </div>
@@ -72,24 +78,32 @@
                     <div class='row'>  
                         <div class="col-12" id='location-box'>
                             <span class='profile-header mb-5'>Address</span> <br /> <br /> <br />
+
+                            <div class='profile-label'> Location </div>
                             <span id='profile-location' class='profile-address'> Add Location </span>
                             <button class="btn btn-primary address-save" id='location-save'> Save </button> <br /> <br />
+
+                            <div class='profile-label'> City </div>
                             <input id='profile-city' class='profile-address' placeholder='Add City Details'> 
                             <button class="btn btn-primary address-save" id='city-save'> Save </button> <br /> <br />
+
+                            <div class='profile-label'> State </div>
                             <input id='profile-state' class='profile-address' placeholder='Add State Details'> 
                             <button class="btn btn-primary address-save" id='state-save'> Save </button> <br />
-                        </div>
-                    </div> 
-                    <hr class='seperator'/>
 
+                        </div>
+                    </div> <br /> <br /> <br /> <br />
+                    
+                    <br /> <br /> 
                     <div class="row">
                         <div class="col-12" id='credentials-box'>
                             <span class='profile-header mb-5'>Credentials</span> <br /> <br /> <br />
                             <div id='profile-notifications' class='profile-credentials'> 
-                                Notifications  
+                                <b> Notifications </b>  &nbsp; &nbsp;
+                                <span>  <img src='./../styles/bs5_icons/bell.svg' id='notification-bell'> </span>
                             </div> <br />
                             <div class='profile-credentials'> 
-                                Phone number:   <span id='profile-phone'></span>    
+                                <b> Phone number: </b> &nbsp; &nbsp;   <span id='profile-phone'></span>    
                             </div>
                         </div>
                     </div>

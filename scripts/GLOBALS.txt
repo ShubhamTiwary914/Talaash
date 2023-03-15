@@ -24,3 +24,4 @@ Holds list of all variables in client session for documentation
 ------------ REPORTS ------------
 15. reportType (string): type of report user has clicked to make => resets when user leaves make-report page
 16. reportID (int): report ID that user has spotted
+17. viewReportID (int): report ID that the user has spotted to be viewed in reportViewer.html

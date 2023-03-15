@@ -22,12 +22,10 @@
 }
 
 #mainBody #chatBox {
-  position: fixed;
   width: 100%;
   height: 80%;
   -webkit-box-shadow: 3px 3px 2px #6d6c6c, -3px -3px 2px #6d6c6c;
           box-shadow: 3px 3px 2px #6d6c6c, -3px -3px 2px #6d6c6c;
-  margin: -10% 0% 0% 10%;
   overflow-y: scroll;
   background-color: white;
 }

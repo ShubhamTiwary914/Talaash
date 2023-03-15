@@ -7,8 +7,12 @@
 
 <?php   //LOAD REPORTS
 
-    function loadReports($reportLimit){
-        $query = "SELECT * FROM report LIMIT $reportLimit";
+    function loadReports($reportLimit, $myOwnReports = false, $userID = null){
+        $query = "";
+        if($myOwnReports)
+            $query = "SELECT * FROM report WHERE byUser = $userID";
+        else
+            $query = "SELECT * FROM report LIMIT $reportLimit";
         $result = mysqli_query( $_SESSION['dbConnection'], $query);
         $rows = mysqli_num_rows($result);
 
@@ -28,7 +32,10 @@
 
     if(isset($_POST['loadReports'])){
         $reportLimit = $_POST['limit'];
-        loadReports($reportLimit);   
+        if(isset($_POST['loadMyReports']))
+            loadReports($reportLimit, true, $_POST['userID']);
+        else
+            loadReports($reportLimit);   
     }
 
 ?>
@@ -42,7 +49,7 @@
 
         $spottedReportID = $_POST['reportID'];
         $classification = strtolower($_POST['type']);
-        $last_seenTime = $_POST['time'].", ".$_POST['date'];
+        $last_seenTime = $_POST['date'];
         $firCopy = $_POST['FIRName'];
         $identificationImage = $_POST['imageName'];
         $description = $_POST['description'];

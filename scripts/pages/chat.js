@@ -80,7 +80,7 @@ function load_userMessages_intoPage(){
                         <div class='col-2'>  
                             <br /> <br /> <br />
                             <div class='message-username'> ${byUsername} </div> 
-                            <div class='message-timer text-secondary'> : 3 hours ago </div> 
+                            <div class='message-timer text-secondary'> :  </div> 
                         </div>
                     </div>
                     <div class='row message-body'>
@@ -114,8 +114,7 @@ function load_spottedReportLink_OR_nonSpottedBody(isSpotted, body, reportID_spot
             return '';
         return `<div class='message-box'>
             ${byUsername} has responded to your missing report <br />  <br />
-            <button class='report-viewer btn btn-secondary' id='report-${reportID_spotted}'> View More 
-            </button>
+            <button class='report-viewer btn btn-secondary' id='report-${reportID_spotted}'> View More </button>
         </div>`;
     }
 }
@@ -133,12 +132,22 @@ function filterMessages( currentUserID, messagerID ){
 }
 
 
+function viewReport(reportID){
+    let viewReportID_integer = parseInt(reportID)
+    sessionStorage.setItem('viewReportID', viewReportID_integer)
+    window.location.href = './reportViewer.html';
+}
+
+
 function load_chatMode( messagerID ){
+    
     readMode = true;
     //CSS
     $('.inbox-message').css({'background-color': 'white', 'cursor': 'default'})
     $('#inbox, #header, #footer').css({ 'filter': 'blur(15px) opacity(10%)' });
-    $('#chatBox').attr('hidden', false);
+    $('#inbox, #footer, #header').hide();
+    $('#chatBreaker').show()
+    $('#chatBox').show();
     //SCRIPT
     
     let messagesByUser = filterMessages( sessionStorage.getItem('ID'), messagerID );
@@ -168,8 +177,12 @@ function load_chatMode( messagerID ){
 function exit_chatMode(){
     readMode = false;
     $('#inbox, #header, #footer').css({ 'filter': 'none' });
-    $('#chatBox').attr('hidden', true);
+    $('#inbox, #footer, #header').show();
+    $('#chatBox').hide()
+    $('#chatBreaker').hide()
 }
+
+
 
 
 
@@ -207,6 +220,8 @@ $(document).ready(function(){
     loadHeaderStyles('chats');
     $('#footer').html( loadFooterComponent('./../') );
     load_userMessages_fromDatabase();
+    $('#chatBox').hide()
+    $('#chatBreaker').hide()
 
     $('.navLink').on('click', function(){
         if(!readMode){
@@ -234,6 +249,11 @@ $(document).ready(function(){
     $('#chatBox-exit').click(function(){
         exit_chatMode();
     })
+
+    $('#chatBox').on('click','.report-viewer', function(){
+        let reportID = $(this).attr('id').split('-')[1]
+        viewReport(reportID);
+    });
 
     $(document).keypress(function(event){
         var keycode = event.keyCode ? event.keyCode : event.which;

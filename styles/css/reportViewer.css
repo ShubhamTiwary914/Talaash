@@ -1,0 +1,9 @@
+#mainBody #report-alert {
+  position: fixed;
+}
+
+#mainBody #reportViewer-box .report-label {
+  font-size: 130%;
+  font-weight: bold;
+}
+/*# sourceMappingURL=reportViewer.css.map */

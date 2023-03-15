@@ -26,11 +26,9 @@
 
 
     #chatBox{
-        position: fixed;
         width: 100%;
         height: 80%;
         box-shadow: 3px 3px 2px rgb(109, 108, 108), -3px -3px 2px rgb(109, 108, 108);
-        margin: -10% 0% 0% 10%;
         overflow-y: scroll;
         background-color: white;
 
