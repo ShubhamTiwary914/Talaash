@@ -17,6 +17,28 @@ function filterOwnReports(byUserID, reportsIndex){
 }
 
 
+function sortReportsArrayByDistance(){
+    let userLongitude = parseFloat(sessionStorage.getItem('location').split(' ')[0])
+    let userLatitude = parseFloat(sessionStorage.getItem('location').split(' ')[1])
+
+    console.log(userLatitude)
+    for(let index = 0; index < reportsArray.length; index++){
+        if(reportsArray[index]['coordinates'] == null)
+            reportsArray[index]['coordinates'] = '0 0'
+        let reportLatitude = parseFloat(reportsArray[index]['coordinates'].split(' ')[0]);
+        let reportLongitude = parseFloat(reportsArray[index]['coordinates'].split(' ')[1]);
+        reportsArray[index]['distance'] = distanceBetween_twoCoordinates(userLatitude, userLongitude, reportLatitude, reportLongitude, 'Kilometer')
+    }
+    reportsArray.sort( (report_a, report_b) => report_a['distance'] - report_b['distance'] );
+}
+
+
+
+function maxedReportsPopup(){ //tell user that no more messages are left to show
+
+}
+
+
 function loadReports_intoFeed(){
     if(reportsArray.length > 0){
         let new_reportsFeed = "";
@@ -29,6 +51,7 @@ function loadReports_intoFeed(){
                     <div class='report-description'> <b> Description </b> ${reportsArray[index]['description']}   </div> <br />
                     <div class='report-last-seenTime'> <b> Last seen Time: </b>  ${reportsArray[index]['last_seenTime']} </div> <br />
                     <div class='report-last-seenLocation'> <b> Last seen Location: </b>  ${reportsArray[index]['last_seenLocation']} </div> <br />
+                    <div class='report-distance'> <b> Distance: </b>  ${reportsArray[index]['distance'].toFixed(2)} kilometers </div> <br />
                     <div class='report-ID'> <b> Report ID: </b>  ${reportsArray[index]['ID']} </div> <br />
                     
                     ${filterOwnReports( reportsArray[index]['byUser'], index )} <br />
@@ -42,10 +65,6 @@ function loadReports_intoFeed(){
     }else{
         $('#feed-content').html('<h3>There are no reports yet!</h3>')
     }
-}
-
-function maxedReportsPopup(){
-
 }
 
 
@@ -69,11 +88,14 @@ function loadReports_fromDatabase(){
                 reportsRetrieved++;
             }
         }           
+        
         if(reportsRetrieved <= 0)
             maxedReportsPopup();
+        sortReportsArrayByDistance();
         loadReports_intoFeed();
     })
 }
+
 
 
 $(document).ready(function(){

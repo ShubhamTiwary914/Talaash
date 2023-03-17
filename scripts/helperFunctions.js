@@ -21,3 +21,28 @@ function booleanParser(phpBoolean){
         return true;
 }
 
+
+
+
+function distanceBetween_twoCoordinates(lat1, lon1, lat2, lon2, unit = 'Kilometer') {
+	if ((lat1 == lat2) && (lon1 == lon2)) {
+		return 0;
+	}
+	else {
+		var radlat1 = Math.PI * lat1/180;
+		var radlat2 = Math.PI * lat2/180;
+		var theta = lon1-lon2;
+		var radtheta = Math.PI * theta/180;
+		var distance = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+		if (distance > 1) {
+			distance = 1;
+		}
+		distance = Math.acos(distance);
+		distance = distance * 180/Math.PI;
+		distance = distance * 60 * 1.1515;
+        if (unit == "Kilometer")  
+            distance = distance * 1.609344  
+		return distance; //default as Miles
+	}
+}
+

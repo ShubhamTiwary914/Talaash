@@ -14,8 +14,8 @@
             .report{
                 margin-left: 10%;
                 .report-image{
-                    width: 60%;
-                    height: 50%;
+                    width: 40%;
+                    height: 33%;
                 }
                 .report-description{
                     font-size: 130%;
@@ -24,7 +24,7 @@
                     width: 90%;
                     margin-left: -5%;
                 }
-                .report-last-seenTime, .report-last-seenLocation{
+                .report-last-seenTime, .report-last-seenLocation, .report-distance, .report-ID{
                     font-size: 130%;
                 }
             }

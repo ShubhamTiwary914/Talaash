@@ -94,7 +94,7 @@ function addUser_location(addressType){
     const success = (position) =>{
         let longt = position.coords.longitude;
         let latt = position.coords.latitude;
-        $(`#profile-location`).text(`${longt} N \t${latt} E`);
+        $(`#profile-location`).text(`${longt}  \t${latt} `);
 
         let addressValue = `${longt} ${latt}`;
         addLocation_inDatabase(addressValue, addressType)
@@ -106,6 +106,7 @@ function addUser_location(addressType){
 
     navigator.geolocation.getCurrentPosition(success, error);
 }
+
 
 
 function saveLocations(saveBtnElement){

@@ -13,8 +13,8 @@
 }
 
 #mainBody #feed-box #feed-content .report .report-image {
-  width: 60%;
-  height: 50%;
+  width: 40%;
+  height: 33%;
 }
 
 #mainBody #feed-box #feed-content .report .report-description {
@@ -26,7 +26,7 @@
   margin-left: -5%;
 }
 
-#mainBody #feed-box #feed-content .report .report-last-seenTime, #mainBody #feed-box #feed-content .report .report-last-seenLocation {
+#mainBody #feed-box #feed-content .report .report-last-seenTime, #mainBody #feed-box #feed-content .report .report-last-seenLocation, #mainBody #feed-box #feed-content .report .report-distance, #mainBody #feed-box #feed-content .report .report-ID {
   font-size: 130%;
 }
 

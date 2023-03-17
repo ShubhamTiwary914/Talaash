@@ -71,15 +71,17 @@ function uploadFiles( eventObjID ){
         });
     }
 }
-function submitReport(){
+function submitReport(lastCoordinates){
     uploadFiles('report-form-image');
     let imageTitle = !($(`#report-form-image`).val() == "") ? $(`#report-form-image`)[0].files[0]['name'] : "";
     let FIRTitle = !($(`#report-form-FIR`).val() == "") ? $(`#report-form-FIR`)[0].files[0]['name'] : "";
     let reportData = {
         saveReport: true, category: $('#report-form-category').val().split(" ")[0], reportID: $('#report-form-ID').val(), type: $('#report-form-type').val(),
         imageName: imageTitle, description: $('#report-form-description').val(), FIRName: FIRTitle, time: $('#report-form-time').val(),
-        date: $('#report-form-date').val(), location: $('#report-form-location').val(), byUserID: sessionStorage.getItem('ID')
+        date: $('#report-form-date').val(), location: $('#report-form-location').val(), byUserID: sessionStorage.getItem('ID'),
+        coordinates: lastCoordinates
     }
+
     $.post('./../php/pages/report.php', reportData, (response)=>{
         alertSuccessful_reportCreation('success');
         if($('#report-form-category').val().split(" ")[0]   ==  'Spotted' )
@@ -87,6 +89,27 @@ function submitReport(){
     });
 }
 
+
+
+function getPinpointedLocation(){
+    console.log('running...')
+    let apiKey = 'd0e6bda9f31d47cda3da00d1a3c703da';
+    let query = $('#report-form-location').val();
+    fetch(`https://api.geoapify.com/v1/geocode/search?text=${query}&lang=en&limit=5&type=city&format=json&apiKey=${apiKey}`).then(response => response.json()).then(result =>{ //main code here(code block after lat and long are retrieved)
+        let latSum = 0, longSum = 0;
+        for(let index = 0; index < result['results'].length; index++){
+            let resultObject = result['results'][index];
+            latSum += resultObject['lat']
+            longSum += resultObject['lon'] 
+        }
+        let latitudeAvg = latSum / (result['results'].length)
+        let longitudeAvg = longSum / (result['results'].length)
+
+        let coordinatesDD =   `${latitudeAvg} ${longitudeAvg}`;
+        submitReport(coordinatesDD);
+
+    }).catch(error => console.log('error', error));
+}
 
 
 
@@ -109,7 +132,7 @@ $(document).ready(function(){
     });
 
     $('#report-submit').click(function(){
-        submitReport();
+        getPinpointedLocation();
     });
 
 

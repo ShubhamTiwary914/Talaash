@@ -10,4 +10,9 @@
 #mainBody #report-submit {
   margin-left: 10%;
 }
+
+#mainBody #form-coordinator {
+  text-decoration: none;
+  color: hotpink;
+}
 /*# sourceMappingURL=makeReport.css.map */

@@ -21,7 +21,7 @@
             $currentReport = array(
                 'classification' => $row['classification'], 'last_seenTime' => $row['last_seenTime'], 'identificationImage' => $row['identificationImage'],
                 'description' => $row['description'], 'isActive' => $row['isActive'], 'byUser' => $row['byUser'], 'last_seenLocation' => $row['last_seenLocation'],
-                'type' => $row['type'], 'ID' => $row['ID']
+                'type' => $row['type'], 'ID' => $row['ID'], 'coordinates' => $row['lastCoordinates']
             );
             $reportObj = json_encode($currentReport);
             array_push($reports, $reportObj);
@@ -57,9 +57,10 @@
         $byUser = $_POST['byUserID'];
         $last_seenLocation = $_POST['location'];
         $type = $_POST['category'];
+        $lastCoordinates = $_POST['coordinates'];
         
 
-        $query = "INSERT INTO report(classification, last_seenTime, firCopy, identificationImage, description, isActive, byUser, last_seenLocation, type, spottedReportID) VALUES('$classification', '$last_seenTime', '$firCopy', '$identificationImage', '$description', $isActive, $byUser, '$last_seenLocation', '$type', '$spottedReportID')";
+        $query = "INSERT INTO report(classification, last_seenTime, firCopy, identificationImage, description, isActive, byUser, last_seenLocation, type, spottedReportID, lastCoordinates) VALUES('$classification', '$last_seenTime', '$firCopy', '$identificationImage', '$description', $isActive, $byUser, '$last_seenLocation', '$type', '$spottedReportID', '$lastCoordinates')";
         mysqli_query( $_SESSION['dbConnection'], $query);
     }
 ?>
