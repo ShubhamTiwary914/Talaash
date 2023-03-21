@@ -92,9 +92,9 @@ function submitReport(lastCoordinates){
 
 
 function getPinpointedLocation(){
-    console.log('running...')
     let apiKey = 'd0e6bda9f31d47cda3da00d1a3c703da';
     let query = $('#report-form-location').val();
+    let reportType = sessionStorage.getItem('reportType').split('-')[1];
     fetch(`https://api.geoapify.com/v1/geocode/search?text=${query}&lang=en&limit=5&type=city&format=json&apiKey=${apiKey}`).then(response => response.json()).then(result =>{ //main code here(code block after lat and long are retrieved)
         let latSum = 0, longSum = 0;
         for(let index = 0; index < result['results'].length; index++){
@@ -107,7 +107,6 @@ function getPinpointedLocation(){
 
         let coordinatesDD =   `${latitudeAvg} ${longitudeAvg}`;
         submitReport(coordinatesDD);
-
     }).catch(error => console.log('error', error));
 }
 
@@ -132,7 +131,11 @@ $(document).ready(function(){
     });
 
     $('#report-submit').click(function(){
-        getPinpointedLocation();
+        let reportType = sessionStorage.getItem('reportType').split('-')[1];
+        if(reportType == 'spotted')
+            submitReport('');
+        else
+            getPinpointedLocation();
     });
 
 
