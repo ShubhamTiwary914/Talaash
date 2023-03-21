@@ -21,7 +21,7 @@ function loadUserTrackers(){
                     <div class='row tracker' id='tracker-${trackerIndex}'>
                         <div class='col-3'>
                             <div class='tracker-id'> <b> ID: </b> ${trackersArray[trackerIndex]['latitudeFieldID']} </div> <br />
-                            <div class='tracker-type'> <b> Type: </b> ${trackersArray[trackerIndex]['type']} </div>
+                            <div class='tracker-type'> <b> Type: </b> T-${trackersArray[trackerIndex]['type']} </div>
                         </div>
                         <div class='col-3'>
                             <div class='tracker-distance'>  <b> Current Distance: </b> &nbsp &nbsp ${loadCurrentDistance(trackersArray[trackerIndex]['latitude'], trackersArray[trackerIndex]['longitude'])} </div> <br />
