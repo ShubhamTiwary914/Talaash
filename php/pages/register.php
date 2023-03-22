@@ -61,6 +61,7 @@
        if( !checkIf_userExists($username, $password) ){   //if user does'nt exist then create one
             if( !checkIf_contacttaken($email, $phone_no) ){     //if email or phone NOT taken then allow signup
                 saveUser_toDatabase($username, $password, $email, $phone_no, $isGovernmentOfficial, $creationDate);
+                echo '{ "contact": false,  "username": false}';
             }else{   //if email or phone taken then don't allow signup
                 echo '{ "contact": true,  "username": false}';
             }

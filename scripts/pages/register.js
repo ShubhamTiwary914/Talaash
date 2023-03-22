@@ -17,6 +17,7 @@ let rememberMeChecker = false;
 
 
 $(document).ready(function(){
+    $("#alert-block").hide();
     //Loading Component and switches
     $('#switchInput').on('click', ()=>{
         userType_labelSwitcher();
@@ -77,11 +78,24 @@ function alert_takenField(isTaken){
         $('#usernameTaken_alerter').text('Username has already been Taken!')
         setTimeout(disable_alerterText, 2000)
     }
+    if(!isTaken.contact && !isTaken.username)
+        successAlertHandler("Account Created Successfully!");
 }
 function disable_alerterText(){
     $('#usernameTaken_alerter').text('');
     $('#contactTaken_alerter').text('');
 }
+
+function successAlertHandler(message, end = false){
+    if(end)
+        $('#alert-block').hide()
+    else{
+        $('#alert-block').show()
+        $('#alert-block').text(message)
+        setTimeout(()=>{ successAlertHandler('', true)}, 1000)
+    }
+} 
+
 
 
 function alert_loginErrors( loginResponse){

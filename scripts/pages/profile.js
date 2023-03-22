@@ -97,7 +97,9 @@ function addUser_location(addressType){
         $(`#profile-location`).text(`${longt}  \t${latt} `);
 
         let addressValue = `${longt} ${latt}`;
-        addLocation_inDatabase(addressValue, addressType)
+        sessionStorage.setItem('location', addressValue);
+        //console.log(sessionStorage.getItem('location'));
+        addLocation_inDatabase(addressValue, addressType);
 
     }
     const error = () =>{
